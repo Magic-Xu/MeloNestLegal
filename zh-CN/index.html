@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MeloNest - 本地 AI 音乐播放器</title>
+  <style>
+    :root { color-scheme: dark; --bg: #0d1513; --panel: #172521; --line: #2e413c; --text: #fff; --muted: #9ec9c4; --soft: #cbefeb; --primary: #159a8f; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; color: var(--text); background: linear-gradient(180deg, #0f1d1a 0%, var(--bg) 100%); }
+    main { width: min(920px, calc(100% - 32px)); margin: 0 auto; padding: 56px 0 72px; }
+    nav { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 44px; }
+    a { color: var(--soft); }
+    nav a { color: var(--muted); text-decoration: none; }
+    h1 { margin: 0; font-size: clamp(36px, 7vw, 72px); line-height: 1; letter-spacing: 0; }
+    h2 { margin: 36px 0 12px; font-size: 22px; }
+    p { color: var(--muted); line-height: 1.8; font-size: 16px; }
+    .hero { padding: 40px 0 28px; border-bottom: 1px solid var(--line); }
+    .tagline { max-width: 680px; font-size: 19px; margin-top: 18px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 18px; }
+    .card { display: block; min-height: 128px; padding: 20px; border: 1px solid var(--line); border-radius: 18px; background: rgba(23, 37, 33, .82); text-decoration: none; color: var(--text); }
+    .card strong { display: block; margin-bottom: 8px; font-size: 18px; }
+    .card span { color: var(--muted); line-height: 1.6; }
+    .pill { display: inline-flex; padding: 7px 11px; border-radius: 999px; background: rgba(21, 154, 143, .16); color: var(--soft); border: 1px solid rgba(203, 239, 235, .2); }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+  </style>
+</head>
+<body>
+  <main>
+    <nav aria-label="主导航">
+      <a href="../index.html">English</a>
+      <a href="./privacy-policy.html">隐私政策</a>
+      <a href="./user-agreement.html">用户协议</a>
+    </nav>
+    <section class="hero">
+      <span class="pill">MeloNest 1.0.0</span>
+      <h1>MeloNest</h1>
+      <p class="tagline">一个轻量、本地优先的 Android AI 音乐播放器，用来生成、导入、保存和回放你自己的私人曲库。</p>
+    </section>
+    <section>
+      <h2>产品范围</h2>
+      <div class="grid">
+        <div class="card"><strong>AI 生成音乐</strong><span>通过你配置的生成网关，根据提示词生成音乐。</span></div>
+        <div class="card"><strong>本地导入</strong><span>导入音频，或从视频里本地提取音轨并保存到应用私有存储。</span></div>
+        <div class="card"><strong>轻量播放</strong><span>没有信息流、账号体系和巨型音乐 App 的干扰。</span></div>
+      </div>
+    </section>
+    <section>
+      <h2>法律文件</h2>
+      <div class="grid">
+        <a class="card" href="./privacy-policy.html"><strong>隐私政策</strong><span>说明 MeloNest 如何处理提示词、导入媒体、本地存储和分享。</span></a>
+        <a class="card" href="./user-agreement.html"><strong>用户协议</strong><span>说明使用 MeloNest 及本地音乐功能时适用的条款。</span></a>
+      </div>
+    </section>
+    <footer>最后更新：2026 年 6 月 29 日</footer>
+  </main>
+</body>
+</html>
