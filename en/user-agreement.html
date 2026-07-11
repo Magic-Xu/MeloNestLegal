@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html id="app-view" lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,6 +11,7 @@
     main { width: min(860px, calc(100% - 32px)); margin: 0 auto; padding: 48px 0 72px; }
     a { color: var(--soft); }
     nav { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 34px; }
+    :root:target nav { display: none; }
     nav a { color: var(--muted); text-decoration: none; }
     h1 { margin: 0 0 10px; font-size: clamp(28px, 7vw, 34px); line-height: 1.16; letter-spacing: 0; overflow-wrap: anywhere; }
     h2 { margin: 34px 0 10px; font-size: 20px; }
