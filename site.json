@@ -1,0 +1,14 @@
+{
+  "baseUrl": "https://magic-xu.github.io/MeloNestLegal/",
+  "requiredPages": [
+    "en/index.html",
+    "en/privacy-policy.html",
+    "en/user-agreement.html",
+    "index.html",
+    "privacy-policy.html",
+    "user-agreement.html",
+    "zh-CN/index.html",
+    "zh-CN/privacy-policy.html",
+    "zh-CN/user-agreement.html"
+  ]
+}
