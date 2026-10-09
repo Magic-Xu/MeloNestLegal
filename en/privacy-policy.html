@@ -16,7 +16,7 @@
     h1 { margin: 0 0 10px; font-size: clamp(28px, 7vw, 34px); line-height: 1.16; letter-spacing: 0; overflow-wrap: anywhere; }
     h2 { margin: 34px 0 10px; font-size: 20px; }
     p { color: var(--muted); line-height: 1.78; font-size: 15px; }
-    .meta { margin: 20px 0 28px; padding: 16px; border-radius: 16px; border: 1px solid var(--line); background: var(--panel); color: var(--soft); }
+    .meta { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 20px 0 28px; padding: 16px; border-radius: 16px; border: 1px solid var(--line); background: var(--panel); color: var(--soft); }
     footer { margin-top: 44px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
   </style>
 </head>
@@ -28,31 +28,56 @@
       <a href="../zh-CN/privacy-policy.html">简体中文</a>
     </nav>
     <h1>MeloNest Privacy Policy</h1>
-    <div class="meta">Effective date: July 2, 2026 · App version: 1.0.0</div>
-    <p>MeloNest is a local-first Android music app. This Privacy Policy explains how MeloNest handles prompts, generated music, imported audio or video, local playback data, and sharing.</p>
-    <h2>1. No Account Requirement</h2>
-    <p>MeloNest 1.0.0 does not require you to create an account, sign in, or provide your name, email address, phone number, or profile information.</p>
+    <div class="meta"><span>Effective date: October 10, 2026</span><span>App version: 1.0.0</span></div>
+    <p>This Privacy Policy explains how MeloNest handles local music, generation requests, personal storage and subscription data.</p>
+
+    <h2>1. No MeloNest Account</h2>
+    <p>MeloNest does not require a MeloNest account or profile. Google Play purchases use your Google account, and your storage server or generation provider may require its own credentials. MeloNest does not ask for your Google password or payment-card details.</p>
+
     <h2>2. Music Generation</h2>
-    <p>When you choose to generate music, your prompt and selected generation options may be sent directly to the provider or backend you selected. If you save a provider API key, MeloNest uses it only to authenticate that generation request. Generated audio is saved to your device when generation completes.</p>
+    <p>When you choose to generate music, your prompt and selected options are sent to the provider or backend you selected. A saved provider API key is used to authenticate requests to that provider. Generated audio is saved to your device when generation completes. Your draft and submitted prompts, options and generation status are retained locally so you can review or explicitly retry a previous attempt.</p>
+
     <h2>3. Imported Audio and Video</h2>
-    <p>When you import media, MeloNest uses the Android system file picker. User-selected audio is copied into MeloNest's app-private storage. User-selected video is processed locally to extract its audio track. MeloNest may read local media metadata such as title and duration to display your library.</p>
-    <h2>4. Local Storage</h2>
-    <p>MeloNest stores generated tracks, imported tracks, track titles, playback state, provider API keys you enter, and app preferences locally on your device. You can remove local app data by deleting tracks inside the app, clearing app storage in Android settings, or uninstalling MeloNest.</p>
-    <h2>5. Sharing</h2>
-    <p>When you tap share, MeloNest uses the Android share sheet and grants temporary read access only to the file you chose to share. Sharing is initiated by you.</p>
-    <h2>6. Legal Pages</h2>
-    <p>When you open the Privacy Policy or User Agreement inside MeloNest, the app loads these public legal pages from GitHub Pages in an in-app WebView. GitHub Pages may receive standard web request information, such as IP address and user agent, to serve the pages.</p>
-    <h2>7. Ads, Analytics, Billing, and Tracking</h2>
-    <p>MeloNest 1.0.0 may include Google Mobile Ads for in-app advertising, Firebase Analytics for app usage measurement, and Firebase Crashlytics for crash diagnostics. These Google SDKs may receive app/device information, ad delivery signals, usage events, crash logs, and diagnostic data as needed to provide those services. MeloNest does not include Google Play Billing, subscriptions, or in-app purchases.</p>
-    <h2>8. Permissions</h2>
-    <p>MeloNest uses platform capabilities required for its core features, such as internet and network state access for generation, legal pages, ads, analytics, and crash diagnostics, Android document picking, and file sharing through a FileProvider. MeloNest does not use Accessibility Service, Usage Access, microphone recording, contact access, location access, or background screen reading in version 1.0.0.</p>
-    <h2>9. Data Selling</h2>
+    <p>MeloNest uses the Android system file picker. Selected audio is copied into app-private storage; selected video is processed locally to extract its audio track. Local metadata such as title and duration is read to display your library. Importing does not automatically upload media to a generation provider or storage server.</p>
+
+    <h2>4. Personal Storage and Remote Music</h2>
+    <p>If you configure your own WebDAV storage, MeloNest connects directly to that server to browse, stream, download, or upload the music you explicitly select. An upload from your app library can include the song's existing artwork and lyrics. The selected server receives those files and the connection information needed to serve your requests, including authentication and normal network request information. MeloNest does not host or relay your music.</p>
+    <p>Storage credentials are encrypted in app-private storage and used only to authenticate to the configured server and folder. They are not sent to the subscription verifier or generation provider. HTTPS connections validate the server certificate. If you explicitly enable HTTP for a local server, that connection is not encrypted.</p>
+    <p>Downloaded songs and playback cache are stored on your device. Removing a connection or an offline copy does not delete the remote file. Remote deletion is a separate, confirmed operation. Files uploaded to your server remain governed by that server's access, retention and backup settings.</p>
+
+    <h2>5. Local Data and Deletion</h2>
+    <p>MeloNest stores your music, titles, lyrics and artwork when available, playback state, draft, generation history, provider keys, storage connections, transfer records and preferences locally. Drafts, generation history, provider keys and storage credentials are excluded from Android cloud backup and device transfer. Upload preparation may create temporary private copies of selected files; completed or cancelled tasks release those private sources without deleting the originals.</p>
+    <p>You can delete songs and offline copies and remove saved storage connections in the app. Clearing app storage or uninstalling removes app-private local data, including drafts and history. It does not remove copies you exported, files on your server, a provider's records, or Google's purchase records. Keep separate copies of music you want to retain.</p>
+
+    <h2>6. Sharing</h2>
+    <p>When you tap share, MeloNest uses the Android share sheet and grants temporary read access only to the selected file. The app or recipient you choose handles that copy under its own practices.</p>
+
+    <h2>7. Google Play Subscriptions and Verification</h2>
+    <p>The optional remote-library subscription uses Google Play Billing. Google handles checkout and payment information. To verify or restore access, MeloNest sends the Google Play purchase token and a Firebase App Check proof over HTTPS to the MeloNest verification service. The service validates the proof and checks the subscription with Google. Firebase App Check with Play Integrity processes app and device integrity signals to help prevent unauthorized access.</p>
+    <p>The verification service stores a hash of the purchase token, subscription validity and verification state in Google Cloud Firestore. It does not store the raw purchase token. Music, prompts, lyrics, NAS credentials and generation-provider keys are not part of subscription verification. Like other network services, the verifier and its hosting provider may receive standard request information such as an IP address.</p>
+    <p>Verification records are retained to validate and restore subscriptions and to prevent replaced purchase credentials from granting access again. Uninstalling the app or cancelling renewal does not automatically delete these records. For questions or deletion requests, use the support channels below. Google separately manages its payment records under its own policies.</p>
+
+    <h2>8. Ads, Analytics and Diagnostics</h2>
+    <p>MeloNest may include Google Mobile Ads for in-app advertising, Firebase Analytics for app usage measurement, and Firebase Crashlytics for crash diagnostics. These SDKs may receive app/device information, ad delivery signals, usage events and diagnostic data as needed to provide their services. MeloNest does not intentionally include prompts, music files, storage credentials, provider keys or purchase tokens in analytics or diagnostic events.</p>
+
+    <h2>9. Legal Pages</h2>
+    <p>The in-app WebView loads these public pages from GitHub Pages. GitHub Pages may receive standard request information, such as an IP address and user agent, to serve them.</p>
+
+    <h2>10. Platform Capabilities</h2>
+    <p>MeloNest uses network access for generation, personal storage, subscription verification, legal pages and configured Google SDKs. Android document picking provides access to selected files. Media sessions, transfer scheduling and foreground notifications support playback and user-started transfers. Sharing uses FileProvider. MeloNest does not use an Accessibility Service, Usage Access, microphone recording, contacts, location access or background screen reading.</p>
+
+    <h2>11. Data Selling</h2>
     <p>MeloNest does not sell your personal data.</p>
-    <h2>10. Changes</h2>
+
+    <h2>12. Children</h2>
+    <p>MeloNest is not directed to children under 13. If you believe a child has provided personal information, contact us so we can review and delete it where applicable.</p>
+
+    <h2>13. Changes</h2>
     <p>We may update this Privacy Policy as MeloNest evolves. The latest version will be posted on this page with a new effective date.</p>
-    <h2>11. Contact</h2>
-    <p>For privacy questions, contact the developer through the support channel listed on MeloNest's app store page or GitHub repository.</p>
-    <footer>Last updated: July 2, 2026</footer>
+
+    <h2>14. Contact</h2>
+    <p>For privacy questions or data requests, contact the developer through the support channel listed on MeloNest's app store page or GitHub repository.</p>
+    <footer>Last updated: October 10, 2026</footer>
   </main>
 </body>
 </html>
