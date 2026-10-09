@@ -16,7 +16,7 @@
     h1 { margin: 0 0 10px; font-size: clamp(28px, 7vw, 34px); line-height: 1.16; letter-spacing: 0; overflow-wrap: anywhere; }
     h2 { margin: 34px 0 10px; font-size: 20px; }
     p, li { color: var(--muted); line-height: 1.78; font-size: 15px; }
-    .meta { margin: 20px 0 28px; padding: 16px; border-radius: 16px; border: 1px solid var(--line); background: var(--panel); color: var(--soft); }
+    .meta { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 20px 0 28px; padding: 16px; border-radius: 16px; border: 1px solid var(--line); background: var(--panel); color: var(--soft); }
     footer { margin-top: 44px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
   </style>
 </head>
@@ -28,33 +28,41 @@
       <a href="./zh-CN/user-agreement.html">简体中文</a>
     </nav>
     <h1>MeloNest User Agreement</h1>
-    <div class="meta">Effective date: June 29, 2026 · App version: 1.0.0</div>
+    <div class="meta"><span>Effective date: October 10, 2026</span><span>App version: 1.0.0</span></div>
     <p>These terms govern your use of MeloNest. By using MeloNest, you agree to this User Agreement.</p>
 
     <h2>1. Product Scope</h2>
-    <p>MeloNest helps you generate, import, store, and play a private local music library. Version 1.0.0 focuses on local playback, generated music metadata, imported audio, video-to-audio extraction, lyrics display, sharing, and settings.</p>
+    <p>MeloNest helps you generate, import, store and play a private music library. It supports local playback, audio extraction from selected videos, lyrics, sharing and generation history. Optional personal-storage features connect to your own WebDAV server for remote upload, playback and offline downloads.</p>
 
     <h2>2. Your Content</h2>
-    <p>You are responsible for prompts you enter and media files you import. Only import or share files when you have the rights or permission to do so. MeloNest does not grant you rights to third-party music, videos, samples, or other copyrighted material.</p>
+    <p>You are responsible for prompts and media you import, upload or share. Use files only when you have the necessary rights or permission. MeloNest does not grant rights to third-party music, videos, samples or other copyrighted material.</p>
 
     <h2>3. AI-Generated Music</h2>
-    <p>Generated results may vary. You are responsible for reviewing generated music before using, publishing, or sharing it. If a generation provider or gateway has additional terms, those terms may also apply to generation requests processed by that provider.</p>
+    <p>Generated results may vary; review them before use or sharing. Requests use your selected provider or backend and may be subject to its terms and charges. Retrying a saved prompt starts a new request and may incur another provider charge. Cancelling local waiting does not guarantee that a provider cancels processing or billing. The remote-library subscription does not include generation-provider fees.</p>
 
     <h2>4. Local Files and Deletion</h2>
-    <p>MeloNest stores generated and imported audio locally. Deleting a track removes MeloNest's local record and associated app-private file where available. You remain responsible for backups or copies outside MeloNest.</p>
+    <p>Generated and imported audio is stored locally. Deleting a library track removes its local record and associated app-private file where available. Removing an offline copy, deleting a remote file and removing a storage connection are separate operations. You remain responsible for independent backups. Uninstalling or clearing app storage can remove local music, drafts, history and saved connections.</p>
 
-    <h2>5. No Bypass or Unauthorized Use</h2>
-    <p>Do not use MeloNest to violate laws, infringe rights, bypass platform rules, or distribute content you are not allowed to distribute. MeloNest does not provide social feeds, copyrighted catalog playback, automatic purchasing, screen reading, or undisclosed automation.</p>
+    <h2>5. Personal Storage</h2>
+    <p>You supply and control the server, credentials, connectivity, storage capacity and backups. MeloNest provides a compatible WebDAV client, not NAS hardware, hosted storage, an internet-access service or a licensed music catalog. Uploads occur only for files you select. Interrupted uploads can leave temporary server files that need cleanup. A remote deletion acts on the selected server file and is not a request to delete its separate offline copy.</p>
 
-    <h2>6. Availability</h2>
-    <p>MeloNest is provided as-is. We aim to keep the app stable, but we do not guarantee uninterrupted operation, compatibility with every device, or availability of any external generation provider.</p>
+    <h2>6. Monthly Subscription</h2>
+    <p>Remote-library features are offered through an automatically renewing monthly Google Play subscription. Review the price, billing period and renewal terms displayed by Google Play before confirming a purchase. Access starts after payment and server verification; a pending payment or unsuccessful verification does not establish access.</p>
+    <p>Manage or cancel renewal in Google Play using the account that purchased the subscription. Uninstalling MeloNest does not cancel it. Cancellation normally preserves access for the paid period; expiry, refunds, revocation or payment holds can affect access according to the subscription's verified status. Existing local songs and completed offline copies remain playable without an active remote-library subscription. Restore uses purchases available through the current Google Play account.</p>
+    <p>Refund requests are handled under Google's applicable refund policies and any rights provided by applicable law. This agreement does not limit mandatory consumer rights. See Google's <a href="https://support.google.com/googleplay/answer/7018481">subscription management guidance</a>.</p>
 
-    <h2>7. Changes</h2>
+    <h2>7. Permitted Use</h2>
+    <p>Do not use MeloNest to violate laws, infringe rights, bypass platform rules or distribute content without permission. MeloNest does not provide social feeds, copyrighted catalog playback, screen reading or undisclosed automation.</p>
+
+    <h2>8. Availability</h2>
+    <p>MeloNest is provided as-is. We aim to keep it stable but cannot guarantee uninterrupted operation, compatibility with every device or server, or continued availability of an external generation, storage or payment service.</p>
+
+    <h2>9. Changes</h2>
     <p>We may update MeloNest and this User Agreement as the product evolves. Continued use after an update means you accept the updated terms.</p>
 
-    <h2>8. Contact</h2>
+    <h2>10. Contact</h2>
     <p>For questions, contact the developer through the support channel listed on MeloNest's app store page or GitHub repository.</p>
-    <footer>Last updated: June 29, 2026</footer>
+    <footer>Last updated: October 10, 2026</footer>
   </main>
 </body>
 </html>

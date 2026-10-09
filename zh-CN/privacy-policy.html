@@ -16,7 +16,7 @@
     h1 { margin: 0 0 10px; font-size: clamp(28px, 7vw, 34px); line-height: 1.16; letter-spacing: 0; overflow-wrap: anywhere; }
     h2 { margin: 34px 0 10px; font-size: 20px; }
     p { color: var(--muted); line-height: 1.82; font-size: 15px; }
-    .meta { margin: 20px 0 28px; padding: 16px; border-radius: 16px; border: 1px solid var(--line); background: var(--panel); color: var(--soft); }
+    .meta { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 20px 0 28px; padding: 16px; border-radius: 16px; border: 1px solid var(--line); background: var(--panel); color: var(--soft); }
     footer { margin-top: 44px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
   </style>
 </head>
@@ -28,42 +28,56 @@
       <a href="../privacy-policy.html">English</a>
     </nav>
     <h1>MeloNest 隐私政策</h1>
-    <div class="meta">生效日期：2026 年 7 月 2 日 · 应用版本：1.0.0</div>
-    <p>MeloNest 是一个本地优先的 Android 音乐应用。本隐私政策说明 MeloNest 如何处理提示词、生成音乐、导入的音频或视频、本地播放数据以及分享行为。</p>
+    <div class="meta"><span>生效日期：2026 年 10 月 10 日</span><span>应用版本：1.0.0</span></div>
+    <p>本隐私政策说明 MeloNest 如何处理本地音乐、生成请求、个人存储和订阅相关数据。</p>
 
-    <h2>1. 无账号要求</h2>
-    <p>MeloNest 1.0.0 不要求你注册账号、登录，或提供姓名、邮箱、手机号、头像等个人资料。</p>
+    <h2>1. 无需 MeloNest 账号</h2>
+    <p>MeloNest 不要求注册 MeloNest 账号或建立个人资料。Google Play 购买使用你的 Google 账号；个人存储服务器或音乐生成供应商可能需要各自的凭据。MeloNest 不要求你提供 Google 密码或银行卡资料。</p>
 
     <h2>2. AI 音乐生成</h2>
-    <p>当你主动生成音乐时，你输入的提示词和选择的生成参数可能会直接发送到你选择的供应商或后端。如果你保存了供应商 API Key，MeloNest 仅会将其用于认证这次生成请求。生成完成后，音频会保存到你的设备本地。</p>
+    <p>当你主动生成音乐时，提示词和生成参数会发送到你选择的供应商或后端。保存的供应商 API Key 用于向该供应商进行请求认证。生成完成后，音频保存到设备本地。音乐想法草稿，以及已提交的提示词、参数和生成状态保存在本地，供你回看或主动重试。</p>
 
     <h2>3. 导入音频和视频</h2>
-    <p>当你导入媒体时，MeloNest 使用 Android 系统文件选择器。你选择的音频会复制到 MeloNest 的应用私有存储。你选择的视频会在本地处理，仅提取其中的音轨。MeloNest 可能会在本地读取标题、时长等媒体元数据，用于展示曲库。</p>
+    <p>MeloNest 使用 Android 系统文件选择器。选中的音频复制到应用私有存储；选中的视频在本地提取音轨。应用会读取标题、时长等本地元数据用于展示曲库。导入本身不会自动把媒体上传到生成供应商或个人存储服务器。</p>
 
-    <h2>4. 本地存储</h2>
-    <p>MeloNest 会在你的设备本地保存生成歌曲、导入歌曲、歌曲标题、播放状态、你填写的供应商 API Key 和应用偏好设置。你可以在应用内删除歌曲，也可以通过 Android 系统设置清除应用存储，或卸载 MeloNest 来移除本地数据。</p>
+    <h2>4. 个人存储与远程音乐</h2>
+    <p>配置自己的 WebDAV 存储后，MeloNest 直接连接该服务器，以浏览、播放、下载或上传你明确选择的音乐。从 App 曲库上传时，可包含歌曲已有的封面与歌词。所选服务器会接收这些文件，以及完成请求所需的认证和常规网络请求信息。MeloNest 不托管或中转你的音乐。</p>
+    <p>存储凭据加密保存在应用私有存储中，仅用于向所配置的服务器和目录认证，不发送给订阅验单服务或生成供应商。HTTPS 连接会验证服务器证书。如果你明确为本地服务器启用 HTTP，该连接不会加密。</p>
+    <p>下载的歌曲与播放缓存保存在设备上。移除连接或离线副本不会删除远程文件；远程删除是需要单独确认的操作。已上传文件的访问、保留和备份由你的服务器设置决定。</p>
 
-    <h2>5. 分享</h2>
-    <p>当你点击分享时，MeloNest 会调用 Android 系统分享面板，并只对你选择分享的文件授予临时读取权限。分享行为由你主动发起。</p>
+    <h2>5. 本地数据与删除</h2>
+    <p>MeloNest 在本地保存音乐、标题、已有歌词和封面、播放状态、草稿、生成记录、供应商密钥、存储连接、传输记录和偏好设置。草稿、生成记录、供应商密钥与存储凭据排除在 Android 云备份和设备转移之外。准备上传时可能产生临时私有副本；任务完成或取消后释放这些副本，不删除原文件。</p>
+    <p>你可以在应用内删除歌曲和离线副本、移除保存的存储连接。清除应用存储或卸载会移除应用私有的本地数据，包括草稿与生成记录，但不会移除已导出的副本、服务器文件、供应商记录或 Google 的购买记录。请另行保留需要长期保存的音乐副本。</p>
 
-    <h2>6. 法务页面访问</h2>
-    <p>当你在 MeloNest 内打开隐私政策或用户协议时，应用会通过内置 WebView 从 GitHub Pages 加载这些公开法务页面。GitHub Pages 可能会为了提供页面而接收标准网络请求信息，例如 IP 地址和 user agent。</p>
+    <h2>6. 分享</h2>
+    <p>点击分享后，MeloNest 调用 Android 系统分享面板，仅为所选文件授予临时读取权限。你选择的应用或接收方按其自身规则处理该副本。</p>
 
-    <h2>7. 广告、分析、付费和追踪</h2>
-    <p>MeloNest 1.0.0 可能包含 Google Mobile Ads 用于展示应用内广告，包含 Firebase Analytics 用于应用使用情况分析，包含 Firebase Crashlytics 用于崩溃诊断。这些 Google SDK 可能会为了提供相关服务而接收应用和设备信息、广告投放信号、使用事件、崩溃日志和诊断数据。MeloNest 不包含 Google Play Billing、订阅或应用内购买。</p>
+    <h2>7. Google Play 订阅与验单</h2>
+    <p>可选的远程曲库订阅使用 Google Play Billing，由 Google 处理结账与支付资料。确认或恢复权限时，MeloNest 通过 HTTPS 将 Google Play 购买凭证和 Firebase App Check 证明发送到 MeloNest 验单服务。服务验证证明，并向 Google 查询订阅状态。Firebase App Check 与 Play Integrity 处理应用和设备完整性信号，以帮助防止未授权访问。</p>
+    <p>验单服务在 Google Cloud Firestore 中保存购买凭证的哈希摘要、订阅有效性和验证状态，不保存原始购买凭证。音乐、提示词、歌词、NAS 凭据与生成供应商密钥不参与订阅验单。与其他网络服务一样，验单服务及其托管方可能接收 IP 地址等常规请求信息。</p>
+    <p>验证记录用于核对和恢复订阅，以及防止已替换的购买凭证再次授予权限。卸载应用或取消续订不会自动删除这些记录。有关数据查询或删除请求，请通过下方支持渠道联系。Google 按自身政策另行管理支付记录。</p>
 
-    <h2>8. 权限</h2>
-    <p>MeloNest 使用核心功能所需的平台能力，例如用于生成、法务页面、广告、分析和崩溃诊断的网络访问及网络状态访问、Android 文档选择器和通过 FileProvider 分享文件。MeloNest 1.0.0 不使用无障碍服务、使用情况访问权限、麦克风录音、通讯录、定位或后台屏幕读取。</p>
+    <h2>8. 广告、分析与诊断</h2>
+    <p>MeloNest 可能包含 Google Mobile Ads 用于应用内广告、Firebase Analytics 用于使用情况分析，以及 Firebase Crashlytics 用于崩溃诊断。这些 SDK 可能为提供服务而接收应用和设备信息、广告投放信号、使用事件及诊断数据。MeloNest 不会主动将提示词、音乐文件、存储凭据、供应商密钥或购买凭证加入分析和诊断事件。</p>
 
-    <h2>9. 数据出售</h2>
+    <h2>9. 法律页面</h2>
+    <p>应用内 WebView 从 GitHub Pages 加载这些公开页面。GitHub Pages 可能为提供页面而接收 IP 地址、user agent 等常规网络请求信息。</p>
+
+    <h2>10. 平台能力</h2>
+    <p>MeloNest 使用网络访问进行音乐生成、个人存储、订阅验证、法律页面加载及已配置的 Google SDK 服务。Android 文档选择器提供对所选文件的访问。媒体会话、传输调度和前台通知支持播放与用户发起的传输；分享使用 FileProvider。MeloNest 不使用无障碍服务、使用情况访问权限、麦克风录音、通讯录、定位或后台屏幕读取。</p>
+
+    <h2>11. 数据出售</h2>
     <p>MeloNest 不出售你的个人数据。</p>
 
-    <h2>10. 政策变更</h2>
-    <p>随着 MeloNest 的功能演进，我们可能会更新本隐私政策。最新版本会发布在本页面，并标明新的生效日期。</p>
+    <h2>12. 儿童</h2>
+    <p>MeloNest 不面向 13 岁以下儿童。如果你认为儿童提供了个人信息，请联系我们，以便核查并在适用时删除。</p>
 
-    <h2>11. 联系方式</h2>
-    <p>如有隐私相关问题，请通过 MeloNest 应用商店页面或 GitHub 仓库中列出的支持渠道联系开发者。</p>
-    <footer>最后更新：2026 年 7 月 2 日</footer>
+    <h2>13. 政策变更</h2>
+    <p>随着功能演进，我们可能更新本隐私政策。最新版本会发布在本页面，并标明新的生效日期。</p>
+
+    <h2>14. 联系方式</h2>
+    <p>如有隐私问题或数据请求，请通过 MeloNest 应用商店页面或 GitHub 仓库中列出的支持渠道联系开发者。</p>
+    <footer>最后更新：2026 年 10 月 10 日</footer>
   </main>
 </body>
 </html>
